@@ -12,7 +12,7 @@ resource "yandex_mdb_postgresql_cluster" "wp_postgresql" {
   network_id  = yandex_vpc_network.wp-network.id
 
   config {
-    version = 12
+    version = 13
     resources {
       resource_preset_id = "s2.small"
       disk_type_id       = "network-ssd"
