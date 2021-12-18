@@ -32,7 +32,27 @@ resource "yandex_mdb_postgresql_cluster" "wp_postgresql" {
       database_name = "db_name"
     }
   }
-
+  user {
+    name       = "read_user"
+    password   = "read_password"
+    permission {
+      database_name = "db_name"
+    }
+  }
+  user {
+    name       = "write_user"
+    password   = "write_password"
+    permission {
+      database_name = "db_name"
+    }
+  }
+  user {
+    name       = "admin_user"
+    password   = "admin_password"
+    permission {
+      database_name = "db_name"
+    }
+  }
   host {
     zone      = "ru-central1-b"
     subnet_id = yandex_vpc_subnet.wp-subnet-b.id
